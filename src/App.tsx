@@ -56,6 +56,21 @@ export default function App() {
     setShouldRestoreTeachingScroll(true);
   };
 
+  const handleViewArchive = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    setShowArchive(true);
+  };
+
+  const handleOpenProject = (project: Project) => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    setSelectedProject(project);
+  };
+
+  const handleOpenCourse = (course: Course) => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    setSelectedCourse(course);
+  };
+
   // Show project detail page
   if (selectedProject) {
     return (
@@ -63,7 +78,7 @@ export default function App() {
         project={selectedProject} 
         allProjects={projects}
         onBack={handleBackFromProject}
-        onNavigate={(project) => setSelectedProject(project)}
+        onNavigate={handleOpenProject}
       />
     );
   }
@@ -75,7 +90,7 @@ export default function App() {
         course={selectedCourse}
         allCourses={courses}
         onBack={handleBackFromCourse}
-        onNavigate={(course) => setSelectedCourse(course)}
+        onNavigate={handleOpenCourse}
       />
     );
   }
@@ -91,9 +106,9 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-        <ActivityFeed onViewArchive={() => setShowArchive(true)} />
-        <ProjectShowcase onProjectClick={(project) => setSelectedProject(project)} />
-        <Teaching onCourseClick={(course) => setSelectedCourse(course)} />
+        <ActivityFeed onViewArchive={handleViewArchive} />
+        <ProjectShowcase onProjectClick={handleOpenProject} />
+        <Teaching onCourseClick={handleOpenCourse} />
       </main>
       <Contact />
     </div>

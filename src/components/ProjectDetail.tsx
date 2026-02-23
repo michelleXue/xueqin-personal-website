@@ -150,9 +150,7 @@ export function ProjectDetail({ project, allProjects, onBack, onNavigate }: Proj
   const previousProject = allProjects[previousIndex];
   const nextProject = allProjects[nextIndex];
 
-  // Scroll to top when project changes
   const handleNavigate = (targetProject: Project) => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
     onNavigate(targetProject);
   };
 

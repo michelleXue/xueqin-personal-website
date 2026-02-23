@@ -26,7 +26,6 @@ export function CourseDetail({ course, allCourses, onBack, onNavigate }: CourseD
   const nextCourse = allCourses[nextIndex];
 
   const handleNavigate = (target: Course) => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
     onNavigate(target);
   };
 
