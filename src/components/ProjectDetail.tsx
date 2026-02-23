@@ -242,7 +242,7 @@ export function ProjectDetail({ project, allProjects, onBack, onNavigate }: Proj
               <div className="space-y-4">
                 {sortedPortfolio.map((item, index) => (
                   <motion.div
-                    key={item.id}
+                    key={`${project.id}-${item.id}-${index}`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
