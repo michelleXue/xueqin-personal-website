@@ -1,0 +1,41 @@
+{
+  "id": 100,
+  "title": "Project Title",
+  "overview": "One-sentence summary shown on the project card.",
+  "fullDescription": "Longer project description shown on the detail page.\n\nUse **bold text**, ==italic text==, and [links](https://example.com).\n\n- First bullet point- Second bullet point with **highlighted phrase**\n\n1. First numbered item\n2. Second numbered item with a [reference link](https://example.com/reference).",
+  "status": "Active Development",
+  "keywords": ["Keyword 1", "Keyword 2", "Keyword 3"],
+  "image": "src/assets/projects/your-image.jpeg",
+  "portfolio": [
+    {
+      "id": "p100-1",
+      "type": "paper",
+      "pin": true,
+      "title": "Paper Title",
+      "authors": "Author A, Author B",
+      "venue": "Conference/Journal Name",
+      "year": 2026,
+      "url": "https://doi.org/...",
+      "publishedDate": "2026-03"
+    },
+    {
+      "id": "p100-2",
+      "type": "tool",
+      "pin": false,
+      "name": "Tool Name",
+      "description": "Short tool description.",
+      "demoLink": "https://github.com/your-org/your-repo",
+      "linkType": "github",
+      "publishedDate": "2026-02"
+    },
+    {
+      "id": "p100-3",
+      "type": "award",
+      "pin": false,
+      "name": "Grant / Award Name",
+      "description": "Funding details relevant to this project.",
+      "url": "https://example.com/award",
+      "publishedDate": "2026-01"
+    }
+  ]
+}

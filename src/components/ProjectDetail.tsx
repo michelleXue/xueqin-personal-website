@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { ArrowLeft, FileText, Wrench, ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, FileText, Wrench, ExternalLink, Github, ChevronLeft, ChevronRight, Award } from 'lucide-react';
+import type { ReactNode } from 'react';
 import type { Project } from '../types/project';
 
 interface ProjectDetailProps {
@@ -9,14 +10,134 @@ interface ProjectDetailProps {
   onNavigate: (project: Project) => void;
 }
 
+const inlineTokenRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|==(.+?)==|\*\*(.+?)\*\*/g;
+const unorderedListItemRegex = /^\s*[-*]\s+(.+)$/;
+const orderedListItemRegex = /^\s*(\d+)\.\s+(.+)$/;
+
+const renderInlineRichText = (text: string): ReactNode[] => {
+  const nodes: ReactNode[] = [];
+  let lastIndex = 0;
+
+  for (const match of text.matchAll(inlineTokenRegex)) {
+    const fullMatch = match[0];
+    const matchIndex = match.index ?? 0;
+    const [_, linkLabel, linkUrl, italicText, boldText] = match;
+
+    if (matchIndex > lastIndex) {
+      nodes.push(text.slice(lastIndex, matchIndex));
+    }
+
+    if (linkLabel && linkUrl) {
+      nodes.push(
+        <a
+          key={`link-${matchIndex}-${linkUrl}`}
+          href={linkUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rich-text-link"
+        >
+          {linkLabel}
+        </a>,
+      );
+    } else if (italicText) {
+      nodes.push(
+        <em key={`italic-${matchIndex}`} className="italic text-gray-700">
+          {italicText}
+        </em>,
+      );
+    } else if (boldText) {
+      nodes.push(
+        <strong key={`bold-${matchIndex}`} className="font-semibold">
+          {boldText}
+        </strong>,
+      );
+    } else {
+      nodes.push(fullMatch);
+    }
+
+    lastIndex = matchIndex + fullMatch.length;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex));
+  }
+
+  return nodes;
+};
+
+const renderDescription = (text: string): ReactNode => {
+  const blocks = text
+    .split(/\n{2,}/)
+    .map((block) => block.trim())
+    .filter(Boolean);
+
+  if (blocks.length === 0) {
+    return null;
+  }
+
+  return blocks.map((block, blockIndex) => {
+    const lines = block
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean);
+
+    const unorderedMatches = lines.map((line) => line.match(unorderedListItemRegex));
+    if (unorderedMatches.length > 0 && unorderedMatches.every(Boolean)) {
+      return (
+        <ul key={`ul-${blockIndex}`} className="rich-list rich-list-unordered">
+          {unorderedMatches.map((match, itemIndex) => (
+            <li key={`ul-item-${blockIndex}-${itemIndex}`}>
+              {renderInlineRichText(match![1])}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+
+    const orderedMatches = lines.map((line) => line.match(orderedListItemRegex));
+    if (orderedMatches.length > 0 && orderedMatches.every(Boolean)) {
+      const start = Number(orderedMatches[0]?.[1] ?? '1');
+      return (
+        <ol key={`ol-${blockIndex}`} start={start} className="rich-list rich-list-ordered">
+          {orderedMatches.map((match, itemIndex) => (
+            <li key={`ol-item-${blockIndex}-${itemIndex}`}>
+              {renderInlineRichText(match![2])}
+            </li>
+          ))}
+        </ol>
+      );
+    }
+
+    return <p key={`paragraph-${blockIndex}`}>{renderInlineRichText(block)}</p>;
+  });
+};
+
+const renderPinnedBadge = () => (
+  <span
+    style={{
+      backgroundColor: '#e6eaf0',
+      color: '#002663',
+      borderRadius: '9999px',
+      padding: '0.15rem 0.5rem',
+      fontSize: '0.72rem',
+      fontWeight: 600,
+    }}
+  >
+    Pinned
+  </span>
+);
+
 export function ProjectDetail({ project, allProjects, onBack, onNavigate }: ProjectDetailProps) {
   if (allProjects.length === 0) {
     return null;
   }
 
-  // Sort publications by date (newest first)
-  const sortedPublications = [...project.publications].sort((a, b) => {
-    return b.date.localeCompare(a.date);
+  // Sort portfolio items by pin first, then published date (newest first)
+  const sortedPortfolio = [...project.portfolio].sort((a, b) => {
+    if (Boolean(a.pin) !== Boolean(b.pin)) {
+      return a.pin ? -1 : 1;
+    }
+    return b.publishedDate.localeCompare(a.publishedDate);
   });
 
   // Get current project index
@@ -81,7 +202,7 @@ export function ProjectDetail({ project, allProjects, onBack, onNavigate }: Proj
               <h1 className="text-4xl font-bold">{project.title}</h1>
               <span
                 className={`px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap ${
-                  project.status === 'Disseminated'
+                  project.status === 'Completed & Archived'
                     ? 'bg-green-100 text-green-700'
                     : project.status === 'Active Development'
                     ? 'bg-blue-100 text-blue-700'
@@ -106,22 +227,22 @@ export function ProjectDetail({ project, allProjects, onBack, onNavigate }: Proj
             </div>
 
             {/* Full Description */}
-            <p className="text-gray-700 text-lg leading-relaxed">
-              {project.fullDescription}
-            </p>
+            <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+              {renderDescription(project.fullDescription)}
+            </div>
           </div>
 
-          {/* Publications Section */}
+          {/* Research Portfolio Section */}
           <div>
-            <h2 className="text-2xl font-bold mb-6">Publications & Tools</h2>
+            <h2 className="text-2xl font-bold mb-6">Research Portfolio</h2>
 
-            {sortedPublications.length === 0 ? (
+            {sortedPortfolio.length === 0 ? (
               <div className="bg-white rounded-xl p-8 text-center border border-gray-100">
-                <p className="text-gray-500">Publications coming soon</p>
+                <p className="text-gray-500">Portfolio entries coming soon</p>
               </div>
             ) : (
               <div className="space-y-4">
-                {sortedPublications.map((item, index) => (
+                {sortedPortfolio.map((item, index) => (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, x: -20 }}
@@ -149,12 +270,17 @@ export function ProjectDetail({ project, allProjects, onBack, onNavigate }: Proj
                             >
                               {item.title}
                             </h3>
-                            <span className="text-sm text-gray-500 flex-shrink-0">
-                              {item.year}
-                            </span>
+                            <div className="flex items-center gap-2 text-sm text-gray-500 flex-shrink-0">
+                              {item.pin ? renderPinnedBadge() : null}
+                              <span>{item.year}</span>
+                            </div>
                           </div>
-                          <p className="text-sm text-gray-600 mb-1">{item.authors}</p>
-                          <p className="text-sm text-gray-500 mb-3 italic">{item.venue}</p>
+                          <p className="text-sm text-gray-600 mb-1">
+                            {renderInlineRichText(item.authors)}
+                          </p>
+                          <p className="text-sm text-gray-500 mb-3 italic">
+                            {renderInlineRichText(item.venue)}
+                          </p>
                           <a
                             href={item.url}
                             target="_blank"
@@ -167,7 +293,7 @@ export function ProjectDetail({ project, allProjects, onBack, onNavigate }: Proj
                           </a>
                         </div>
                       </div>
-                    ) : (
+                    ) : item.type === 'tool' ? (
                       // Tool Card
                       <div className="flex gap-4">
                         <div
@@ -184,7 +310,10 @@ export function ProjectDetail({ project, allProjects, onBack, onNavigate }: Proj
                           >
                             {item.name}
                           </h3>
-                          <p className="text-sm text-gray-600 mb-3">{item.description}</p>
+                          {item.pin ? <div className="mb-2">{renderPinnedBadge()}</div> : null}
+                          <p className="text-sm text-gray-600 mb-3">
+                            {renderInlineRichText(item.description)}
+                          </p>
                           <a
                             href={item.demoLink}
                             target="_blank"
@@ -197,12 +326,52 @@ export function ProjectDetail({ project, allProjects, onBack, onNavigate }: Proj
                                 <Github size={14} />
                                 View on GitHub
                               </>
+                            ) : item.linkType === 'pypi' ? (
+                              <>
+                                View on PyPI
+                                <ExternalLink size={14} />
+                              </>
                             ) : (
                               <>
                                 View Demo
                                 <ExternalLink size={14} />
                               </>
                             )}
+                          </a>
+                        </div>
+                      </div>
+                    ) : (
+                      // Award/Funding Card
+                      <div className="flex gap-4">
+                        <div
+                          className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
+                          style={{ backgroundColor: '#fef3c7' }}
+                        >
+                          <Award size={24} className="text-amber-700" />
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-start justify-between gap-4 mb-2">
+                            <h3
+                              className="text-lg font-semibold transition-colors"
+                              onMouseEnter={(e) => (e.currentTarget.style.color = '#002663')}
+                              onMouseLeave={(e) => (e.currentTarget.style.color = '')}
+                            >
+                              {item.name}
+                            </h3>
+                            {item.pin ? <div className="flex-shrink-0">{renderPinnedBadge()}</div> : null}
+                          </div>
+                          <p className="text-sm text-gray-600 mb-3">
+                            {renderInlineRichText(item.description)}
+                          </p>
+                          <a
+                            href={item.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-sm hover:underline"
+                            style={{ color: '#002663' }}
+                          >
+                            View Funding Details
+                            <ExternalLink size={14} />
                           </a>
                         </div>
                       </div>

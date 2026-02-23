@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import type { KeyboardEvent } from 'react';
-import { projects } from '../data/projects';
+import { projects } from '../data/projects/index';
 import type { Project } from '../types/project';
 
 interface ProjectShowcaseProps {
@@ -29,8 +29,7 @@ export function ProjectShowcase({ onProjectClick }: ProjectShowcaseProps) {
         >
           <h2 className="text-4xl font-bold mb-4">Research Projects</h2>
           <p className="text-gray-600 mb-12">
-            Tools and frameworks I&apos;m developing to advance software quality
-            and accessibility
+            Tools and frameworks my research team developing.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -61,7 +60,7 @@ export function ProjectShowcase({ onProjectClick }: ProjectShowcaseProps) {
                   />
                   <span
                     className={`absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full ${
-                      project.status === 'Disseminated'
+                      project.status === 'Completed & Archived'
                         ? 'bg-green-100 text-green-700'
                         : project.status === 'Active Development'
                           ? 'bg-blue-100 text-blue-700'

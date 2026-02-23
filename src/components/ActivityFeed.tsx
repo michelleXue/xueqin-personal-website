@@ -1,9 +1,9 @@
 import { motion } from 'motion/react';
 import { Calendar, ExternalLink } from 'lucide-react';
-import { activities, activityColorStyles } from '../data/activities';
+import { activitiesNewestFirst, activityColorStyles } from '../data/activities/index';
 
 export function ActivityFeed({ onViewArchive }: { onViewArchive: () => void }) {
-  const displayedActivities = activities.slice(0, 5);
+  const displayedActivities = activitiesNewestFirst.slice(0, 5);
 
   return (
     <section id="activities" className="py-20 px-6">
@@ -75,7 +75,7 @@ export function ActivityFeed({ onViewArchive }: { onViewArchive: () => void }) {
             })}
           </div>
 
-          {activities.length > 5 && (
+          {activitiesNewestFirst.length > 5 && (
             <div className="text-center mt-8">
               <button
                 onClick={onViewArchive}

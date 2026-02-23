@@ -1,0 +1,47 @@
+{
+  "id": 1,
+  "code": "CSC 1051",
+  "title": "Algorithms & Data Struc I",
+  "description": "Object-oriented design: objects, classes, methods, encapsulation; programming fundamentals: data, variables, selection, loops, arrays, input/output; exceptions.",
+  "syllabusUrl": "#",
+  "active": true,
+  "syllabus": {
+    "objectives": [
+      "Establish an understanding of fundamental object-oriented software concepts, including objects, classes, and encapsulation.",
+      "Establish an understanding of core programming concepts, including algorithms, data storage, control structures, and method invocation.",
+      "Students should be able to design and implement a small application that uses library classes and one or two student-created classes.",
+      "Establish a fundamental proficiency in programming using the Java programming language."
+    ],
+    "textbook": {
+      "title": "Rephactor",
+      "url": "https://rephactor.com/#!/",
+      "description": "Interactive learning for Java programming practice, algorithmic problem-solving, and formative feedback."
+    },
+    "gradingBreakdown": [
+      { "item": "Individual Project", "weight": "15%" },
+      { "item": "Labs", "weight": "15%" },
+      { "item": "Exam 1", "weight": "15%" },
+      { "item": "Exam 2", "weight": "15%" },
+      { "item": "Homework", "weight": "10%" },
+      { "item": "Final Exam", "weight": "25%" },
+      { "item": "Participation", "weight": "3%" },
+      { "item": "Class Attendance", "weight": "2%" }
+    ],
+    "classSchedule": [
+      { "week": 1, "topic": "Introduction to Java programming and how computers process instructions" },
+      { "week": 2, "topic": "Fundamentals of algorithms, data and variables, and arithmetic expressions" },
+      { "week": 3, "topic": "Working with strings and building interactive programs using the Scanner class" },
+      { "week": 4, "topic": "Designing conditional algorithms with boolean expressions, operators, and if statements" },
+      { "week": 5, "topic": "Building repetition algorithms with while loops, break and continue flow control" },
+      { "week": 6, "topic": "Exam 1 covering Chapters 1 through 4 and core programming foundations" },
+      { "week": 7, "topic": "Extending repetition and conditional algorithm design through applied exercises" },
+      { "week": 9, "topic": "Introduction to objects and classes, including writing classes - part 1" },
+      { "week": 10, "topic": "Understanding Java APIs (Random and Math classes) and number systems" },
+      { "week": 11, "topic": "Continuing objects and classes with writing classes - part 2 and practice" },
+      { "week": 12, "topic": "Exam 2 covering Chapters 5 through 8 and object-oriented concepts" },
+      { "week": 13, "topic": "One-class module on array data structures and element access patterns" },
+      { "week": 14, "topic": "Advanced array data-structure techniques and introduction to list abstractions" },
+      { "week": 15, "topic": "File input and output workflows, plus basic exception-handling patterns" }
+    ]
+  }
+}

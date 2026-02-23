@@ -31,11 +31,22 @@ export function Hero() {
               >
                 Villanova University
               </a>
-              . I focus on <strong>Software Testing</strong>, <strong>Accessibility</strong>, and <strong>AI-powered Development Tools</strong>.
+              ,{' '}
+              <a
+                href="https://www.villanova.edu/university/liberal-arts-sciences/programs/computing-sciences.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#002663' }}
+                className="hover:underline"
+              >
+                Department of Computing Sciences
+              </a>
+              . 
+              I focus on <strong>Software Testing</strong>, <strong>Accessibility</strong> on Virtual Reality and Mobile Applications, and I am also interested in designing and developing new <strong>AI-powered</strong> technologies.
             </p>
 
             <p className="text-lg text-gray-600 mb-8">
-              I'm passionate about empowering students to create technology that works for everyone. 
+              I'm passionate about empowering both undergraduates and graduate sudents to create technology that works for everyone. 
               If you're interested in research opportunities or collaboration, let's connect!
             </p>
 

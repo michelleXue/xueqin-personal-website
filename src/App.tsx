@@ -3,21 +3,26 @@ import { Hero } from './components/Hero';
 import { ActivityFeed } from './components/ActivityFeed';
 import { ProjectShowcase } from './components/ProjectShowcase';
 import { Teaching } from './components/Teaching';
+import { CourseDetail } from './components/CourseDetail';
 import { Contact } from './components/Contact';
 import { Archive } from './components/Archive';
 import { ProjectDetail } from './components/ProjectDetail';
-import { projects } from './data/projects';
+import { projects } from './data/projects/index';
+import { courses } from './data/teaching';
 import type { Project } from './types/project';
+import type { Course } from './types/course';
 import { useState, useEffect } from 'react';
 
 export default function App() {
   const [showArchive, setShowArchive] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [shouldRestoreProjectsScroll, setShouldRestoreProjectsScroll] = useState(false);
+  const [shouldRestoreTeachingScroll, setShouldRestoreTeachingScroll] = useState(false);
 
   // Only restore scroll when returning from project detail.
   useEffect(() => {
-    if (!shouldRestoreProjectsScroll || selectedProject || showArchive) {
+    if (!shouldRestoreProjectsScroll || selectedProject || selectedCourse || showArchive) {
       return;
     }
     const projectsSection = document.getElementById('projects');
@@ -26,11 +31,29 @@ export default function App() {
     }
     projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     setShouldRestoreProjectsScroll(false);
-  }, [selectedProject, showArchive, shouldRestoreProjectsScroll]);
+  }, [selectedProject, selectedCourse, showArchive, shouldRestoreProjectsScroll]);
+
+  // Only restore scroll when returning from course detail.
+  useEffect(() => {
+    if (!shouldRestoreTeachingScroll || selectedCourse || selectedProject || showArchive) {
+      return;
+    }
+    const teachingSection = document.getElementById('teaching');
+    if (!teachingSection) {
+      return;
+    }
+    teachingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setShouldRestoreTeachingScroll(false);
+  }, [selectedCourse, selectedProject, showArchive, shouldRestoreTeachingScroll]);
 
   const handleBackFromProject = () => {
     setSelectedProject(null);
     setShouldRestoreProjectsScroll(true);
+  };
+
+  const handleBackFromCourse = () => {
+    setSelectedCourse(null);
+    setShouldRestoreTeachingScroll(true);
   };
 
   // Show project detail page
@@ -41,6 +64,18 @@ export default function App() {
         allProjects={projects}
         onBack={handleBackFromProject}
         onNavigate={(project) => setSelectedProject(project)}
+      />
+    );
+  }
+
+  // Show course detail page
+  if (selectedCourse) {
+    return (
+      <CourseDetail
+        course={selectedCourse}
+        allCourses={courses}
+        onBack={handleBackFromCourse}
+        onNavigate={(course) => setSelectedCourse(course)}
       />
     );
   }
@@ -58,7 +93,7 @@ export default function App() {
         <Hero />
         <ActivityFeed onViewArchive={() => setShowArchive(true)} />
         <ProjectShowcase onProjectClick={(project) => setSelectedProject(project)} />
-        <Teaching />
+        <Teaching onCourseClick={(course) => setSelectedCourse(course)} />
       </main>
       <Contact />
     </div>

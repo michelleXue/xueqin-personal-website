@@ -1,0 +1,41 @@
+{
+  "id": 3,
+  "code": "CSC 4505",
+  "title": "Applied Machine Learning",
+  "description": "Introduction to machine learning through Python based projects; machine learning tools; supervised and unsupervised learning algorithms and modeling accuracy, bias, and overfitting issues.",
+  "syllabusUrl": "#",
+  "active": true,
+  "syllabus": {
+    "objectives": [
+      "Establish a basic understanding of machine learning algorithms.",
+      "Establish an understanding of how to implement simple machine learning algorithms.",
+      "Establish an understanding of how to use the existing machine learning library and the end-to-end machine learning project workflow.",
+      "Establish an understanding of assessing the model performance and solving the basic program like overfitting."
+    ],
+    "textbook": {
+      "title": "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow (3rd Edition)",
+      "url": "https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/",
+      "description": "Hands-on reference covering practical ML workflows, model development, and evaluation in Python."
+    },
+    "gradingBreakdown": [
+      { "item": "Final Project + Presentation", "weight": "45%" },
+      { "item": "Midterm", "weight": "20%" },
+      { "item": "Homework", "weight": "30%" },
+      { "item": "Participation", "weight": "5%" }
+    ],
+    "classSchedule": [
+      { "week": 1, "topic": "Intro to ML, Python and Math Review" },
+      { "week": 2, "topic": "End-to-end ML Project, Data Visualization" },
+      { "week": 3, "topic": "Linear Regression with single variable" },
+      { "week": 4, "topic": "Linear Regression with multiple variables" },
+      { "week": 5, "topic": "Polynomial Regression, Overfitting, Regularization" },
+      { "week": 6, "topic": "Logistic Regression, Performance Assessment" },
+      { "week": 7, "topic": "mid-term exam" },
+      { "week": 9, "topic": "Classification with Decision Tree" },
+      { "week": 10, "topic": "Ensemble Learning and Boosting" },
+      { "week": 11, "topic": "SVM and KNN" },
+      { "week": "12-13", "topic": "Neural Network" },
+      { "week": "14-15", "topic": "Special Topics on Advanced AI models" }
+    ]
+  }
+}

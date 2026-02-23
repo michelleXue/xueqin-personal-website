@@ -141,7 +141,7 @@ This is a modern, responsive academic portfolio website built for an Assistant P
 
 **Features:**
 - Grid layout (3 columns on desktop, responsive)
-- Status badges: Active Development (blue), Evaluation & Validation (yellow), Disseminated (green)
+- Status badges: Active Development (blue), Evaluation & Validation (yellow), Completed/Archived (green)
 - Keyword tags
 - Links to detailed project pages
 
@@ -175,8 +175,9 @@ This is a modern, responsive academic portfolio website built for an Assistant P
 ```
 
 **Customization Points:**
-- Line 5-180: `projects` array - Add/edit projects here
-- Status colors (line 27-29): Modify badge colors
+- Project content files: `/data/projects/*.json` (one file per project)
+- Loader: `/data/projects/index.ts` (auto-loads and sorts by `id`)
+- Template for new projects: `/data/projects/_template.project.json`
 
 ---
 
@@ -269,7 +270,7 @@ This is a modern, responsive academic portfolio website built for an Assistant P
 **Status Colors:**
 - Blue: Active Development (#3b82f6 / blue-500)
 - Yellow/Amber: Evaluation & Validation (#f59e0b / amber-500)
-- Green: Disseminated (#10b981 / green-500)
+- Green: Completed/Archived (#10b981 / green-500)
 
 **Neutral Colors:**
 - Gray scale from Tailwind (gray-100 through gray-900)
@@ -349,40 +350,23 @@ transition={{ duration: 0.5, delay: index * 0.1 }}
 ```
 
 #### 2. Adding a New Project
-**File:** `/components/ProjectShowcase.tsx`
+**Files:** `/data/projects/*.json`
 
 ```typescript
-// Add to the projects array (line 5-180)
+// Create a new JSON file, e.g. /data/projects/007-new-project.json
 {
-  id: 'project-slug',
+  id: 7,
   title: 'Project Title',
-  description: 'Short overview for the card (2-3 sentences)',
-  status: 'Active Development', // or 'Evaluation & Validation', 'Disseminated'
-  statusColor: 'blue', // or 'yellow', 'green'
+  overview: 'Short overview for the card (2-3 sentences)',
+  fullDescription: 'Comprehensive project description with multiple paragraphs...',
+  status: 'Active Development', // or 'Evaluation & Validation', 'Completed/Archived'
   keywords: ['Keyword1', 'Keyword2', 'Keyword3'],
   image: 'https://image-url.com/image.jpg',
-  details: {
-    fullDescription: 'Comprehensive project description with multiple paragraphs...',
-    papers: [
-      {
-        title: 'Paper Title',
-        authors: 'Author1, Author2, Author3',
-        venue: 'Conference/Journal Name',
-        year: 2024,
-        link: 'https://paper-link.com'
-      }
-    ],
-    tools: [
-      {
-        name: 'Tool Name',
-        description: 'Tool description',
-        link: 'https://tool-website.com',
-        github: 'https://github.com/username/repo' // optional
-      }
-    ]
-  }
+  publications: []
 }
 ```
+
+Use `/data/projects/_template.project.json` as your starting point.
 
 **Image Guidelines:**
 - Recommended size: 1200x800px or similar aspect ratio

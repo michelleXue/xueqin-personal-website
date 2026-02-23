@@ -1,0 +1,21 @@
+{
+  "id": 4,
+  "title": "Testing Migration",
+  "overview": "Migrating GUI tests from iOS to Android by replaying and recording iOS events and guided exploration.",
+  "fullDescription": "This project was one of my PhD works.\n\nApple iOS and Android are the two most popular platforms for mobile applications. As companies migrate their apps from one platform to another to reach broader audiences, they must also migrate their graphical user interface (GUI) test cases. However, GUI test migration is tedious and difficult to automate because the two platforms have subtle differences in UI structure and interaction logic, and there are often few or no paired test examples available for learning.\n\nThis project proposes a novel approach, TestMig, which automatically migrates GUI tests from iOS to Android without requiring any migrated code samples. TestMig first executes the iOS GUI tests and records their event sequences. Guided by these recorded iOS events, the framework systematically explores the Android version of the application to generate corresponding Android event sequences that replicate the original test logic.",
+  "status": "Completed & Archived",
+  "keywords": ["Test Reusing", "Android", "iOS"],
+  "image": "src/assets/projects/004.jpeg",
+  "portfolio": [
+    {
+      "id": "p4-2",
+      "type": "paper",
+      "title": "TestMig: migrating GUI test cases from iOS to Android",
+      "authors": "Xue Qin, Hao Zhong, Xiaoyin Wang",
+      "venue": "ISSTA 2019",
+      "year": 2019,
+      "url": "https://dl.acm.org/doi/10.1145/3293882.3330575",
+      "publishedDate": "2019-07"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "date": "October 2024",
+    "sortDate": "2024-10",
+    "type": "conference",
+    "title": "Presented at VARSE'24 (ASE 2024)",
+    "description": "Presented \"Utilizing Generative AI for VR Exploration Testing: A Case Study\" at the VARSE'24 workshop.",
+    "icon": "Presentation",
+    "link": "#"
+  },
+  {
+    "date": "October 2024",
+    "sortDate": "2024-10",
+    "type": "news",
+    "title": "Match Program Projects Released",
+    "description": "Two exciting research projects now available for undergraduate students. Application deadline: November 15.",
+    "icon": "Users",
+    "link": "#"
+  },
+  {
+    "date": "October 2024",
+    "sortDate": "2024-10",
+    "type": "service",
+    "title": "PC Member - AAAI-25 UC",
+    "description": "Joined as a Program Committee member for AAAI 2025 Undergraduate Consortium.",
+    "icon": "Award",
+    "link": "#"
+  },
+  {
+    "date": "September 2024",
+    "sortDate": "2024-09",
+    "type": "service",
+    "title": "Research Catalyst Grant Reviewer",
+    "description": "Accepted invitation to review for the 2024 Research Catalyst Grant (RCG) competition.",
+    "icon": "FileText",
+    "link": "#"
+  },
+  {
+    "date": "August 2024",
+    "sortDate": "2024-08",
+    "type": "publication",
+    "title": "Paper Accepted at VARSE 2024",
+    "description": "Our paper on utilizing Generative AI for VR testing has been accepted at VARSE 2024.",
+    "icon": "FileText",
+    "link": "#"
+  },
+  {
+    "date": "December 2025",
+    "sortDate": "2025-12",
+    "type": "service",
+    "title": "Co-Editor - ASE Journal Special Issue",
+    "description": "Served as co-editor for the Automated Software Engineering Journal Special Issue: Virtual and augmented reality software engineering (VARSE).",
+    "icon": "Users",
+    "link": "https://link.springer.com/collections/didagjjcib"
+  },
+  {
+    "date": "November 2025",
+    "sortDate": "2025-11",
+    "type": "award",
+    "title": "Research Catalyst Grant Award",
+    "description": "Collaborative Project \"STEP-UP AI: Multi-agent Simulation Platform to Strengthen Speaking-Up for Safety\" has been selected for funding by the Villanova Research Catalyst Grant program.",
+    "icon": "Award",
+    "link": "https://www.villanova.edu/university/research-scholarship/virs/internal-funding/research-catalyst.html"
+  },
+  {
+    "date": "Janurary 2026",
+    "sortDate": "2026-01",
+    "type": "publication",
+    "title": "ASEW 2025 Paper Published",
+    "description": "Conference Paper \" NavAI: A Generalizable LLM Framework for Navigation Tasks in Virtual Reality Environments\" has been published.",
+    "icon": "FileText",
+    "link": "https://ieeexplore.ieee.org/abstract/document/11334314"
+  },
+  {
+    "date": "September 2025",
+    "sortDate": "2025-09",
+    "type": "publication",
+    "title": "ASE Journal Paper Published",
+    "description": "Journal Paper\" Harnessing large language models for virtual reality exploration testing: a case study\" has been published.",
+    "icon": "FileText",
+    "link": "https://link.springer.com/article/10.1007/s10515-025-00535-3"
+  },
+  {
+    "date": "Feburary 2026",
+    "sortDate": "2026-02",
+    "type": "publication",
+    "title": "Student Poster Proceeding",
+    "description": "Undergraudate student Matthew DiGiovanni's 2025 CCSC Eastern conference poster proceeding.",
+    "icon": "FileText",
+    "link": "https://sites.google.com/site/ccsceastern/Home"
+  }
+
+]

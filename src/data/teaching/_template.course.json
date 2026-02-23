@@ -1,0 +1,42 @@
+{
+  "id": 100,
+  "code": "CSC 9999",
+  "title": "Course Title",
+  "description": "One-sentence description for the teaching card.",
+  "syllabusUrl": "#",
+  "active": true,
+  "syllabus": {
+    "objectives": [
+      "Objective 1",
+      "Objective 2",
+      "Objective 3"
+    ],
+    "textbook": {
+      "title": "Textbook Title",
+      "url": "https://example.com/textbook",
+      "description": "One sentence about why this book/resource is used."
+    },
+    "gradingBreakdown": [
+      { "item": "Assignments", "weight": "40%" },
+      { "item": "Midterm", "weight": "25%" },
+      { "item": "Final", "weight": "35%" }
+    ],
+    "classSchedule": [
+      { "week": 1, "topic": "Topic 1" },
+      { "week": 2, "topic": "Topic 2" },
+      { "week": 3, "topic": "Topic 3" },
+      { "week": 4, "topic": "Topic 4" },
+      { "week": 5, "topic": "Topic 5" },
+      { "week": 6, "topic": "Topic 6" },
+      { "week": 7, "topic": "Topic 7" },
+      { "week": 8, "topic": "Topic 8" },
+      { "week": 9, "topic": "Topic 9" },
+      { "week": 10, "topic": "Topic 10" },
+      { "week": 11, "topic": "Topic 11" },
+      { "week": 12, "topic": "Topic 12" },
+      { "week": 13, "topic": "Topic 13" },
+      { "week": 14, "topic": "Topic 14" },
+      { "week": 15, "topic": "Topic 15" }
+    ]
+  }
+}

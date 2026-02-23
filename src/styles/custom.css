@@ -1,0 +1,120 @@
+.rich-text-link {
+  color: #0a4a9c;
+  text-decoration-line: underline;
+  text-decoration-color: #0a4a9c;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.rich-text-link:hover {
+  color: #002663;
+  text-decoration-color: #002663;
+}
+
+.rich-text-link:visited {
+  color: #5b3b8c;
+  text-decoration-color: #5b3b8c;
+}
+
+.rich-text-link:focus-visible {
+  outline: 2px solid rgba(0, 38, 99, 0.35);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.rich-list {
+  margin: 0.25rem 0;
+  padding-left: 1.5rem;
+  list-style-position: outside;
+}
+
+.rich-list li + li {
+  margin-top: 0.5rem;
+}
+
+.rich-list-unordered {
+  list-style-type: disc;
+}
+
+.rich-list-ordered {
+  list-style-type: decimal;
+}
+
+.syllabus-shell {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.syllabus-subtitle {
+  margin-top: 0.25rem;
+  font-size: 1.125rem;
+  color: #4b5563;
+}
+
+.syllabus-content {
+  background: linear-gradient(180deg, rgba(250, 252, 255, 0.7) 0%, rgba(255, 255, 255, 0.9) 100%);
+}
+
+.syllabus-section {
+  padding: 1.15rem 1.25rem;
+  border-radius: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+
+.syllabus-section-title {
+  margin: 0 0 0.7rem 0;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #111827;
+}
+
+.syllabus-body {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.625;
+  color: #374151;
+}
+
+.syllabus-textbook-card {
+  box-shadow: none;
+}
+
+.syllabus-table thead th {
+  letter-spacing: 0.01em;
+}
+
+.syllabus-table tbody td {
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.syllabus-grading-table thead th,
+.syllabus-grading-table tbody td {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  color: #374151;
+}
+
+.syllabus-schedule-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.syllabus-schedule-table thead th,
+.syllabus-schedule-table tbody td {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+@media (min-width: 768px) {
+  .syllabus-section {
+    padding: 1.35rem 1.5rem;
+  }
+}

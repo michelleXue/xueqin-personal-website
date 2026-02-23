@@ -1,0 +1,42 @@
+{
+  "id": 5,
+  "title": "Privacy Policy Dection",
+  "overview": "Detecting consistency between software behavior and their privacy policy claims.",
+  "fullDescription": "This project was one of my PhD works.\n\nA privacy policy is a document that explains how an organization collects, uses, stores, and protects users\\' personal information. In an application, the privacy policy guides how user data is collected, processed, shared, and safeguarded throughout the app\\'s features and services. [Personally Identifiable Information (PII)](https://en.wikipedia.org/wiki/Personal_data) refers to any data that can identify a specific individual, such as name, email address, phone number, Social Security number, or other unique identifiers. As a user, it is important to know an application is collecting, using and protecting PII data as promised.\n\n In this project, we proposed a new method that automatically detects potential privacy leaks involving user-entered data and checks whether these leaks conflict with the app\\'s stated privacy policy. When applied to 120 popular apps in finance, health, and dating categories, our approach identified multiple cases where apps potentially violated their own privacy promises, highlighting gaps between policy statements and real app behavior.",
+  "status": "Completed & Archived",
+  "keywords": ["Mobile", "Testing", "Cross-platform"],
+  "image": "src/assets/projects/005.png",
+  "portfolio": [
+    {
+      "id": "p5-1",
+      "type": "paper",
+      "title": "GUILeak: tracing privacy policy claims on user input data for Android applications",
+      "authors": "Xiaoyin Wang, **Xue Qin**, Mitra Bokaei Hosseini, Rocky Slavin, Travis D. Breaux, Jianwei Niu",
+      "venue": "ICSE 2018",
+      "year": 2018,
+      "url": "https://dl.acm.org/doi/10.1145/3180155.3180196",
+      "publishedDate": "2018-05"
+    },
+    {
+      "id": "p5-2",
+      "type": "paper",
+      "title": "Taming web views in the detection of Android privacy leaks",
+      "authors": "**Xue Qin**, Robert Neuhaus, Diego Gonzales, Xiaoyin Wang, Travis Breaux, Jianwei Niu",
+      "venue": "HotSoS 2019",
+      "year": 2019,
+      "url": "https://dl.acm.org/doi/abs/10.1145/3314058.3317732",
+      "publishedDate": "2019-04"
+    },
+    {
+      "id": "p5-2",
+      "type": "paper",
+      "title": "Extracting Information Types from Android Layout Code Using Sequence to Sequence Learning.",
+      "authors": "Mitra Bokaei Hosseini, **Xue Qin**, Jianwei Niu",
+      "venue": "AAAI Workshops 2018",
+      "year": 2018,
+      "url": "https://cdn.aaai.org/ocs/ws/ws0538/17431-76047-1-PB.pdf",
+      "publishedDate": "2018-02"
+    }	
+
+  ]
+}

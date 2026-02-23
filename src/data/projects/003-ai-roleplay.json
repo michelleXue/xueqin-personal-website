@@ -1,0 +1,11 @@
+{
+  "id": 3,
+  "title": "AI-Powered RolePlay Simulator",
+  "overview": "LLM-driven multi-agent simulation framework for interactive, scenario-based environments.",
+  "fullDescription": 
+  "A roleplay simulator is an interactive digital environment in which users take on specific roles and engage in realistic scenarios. It is widely used in both gaming and professional training. In gaming, it allows players to explore immersive, story-driven worlds by making decisions and interacting with characters. In training contexts, it enables learners to practice domain-specific skills, communication strategies, and decision-making in a safe, controlled, and repeatable virtual environment.\n\nIn this project, we investigate how to leverage an LLM-driven multi-agent framework to design a scalable roleplay simulator. Within this system, AI agents assume different roles based on predefined scripts and scenario configurations. These agents engage in meaningful conversations and actions with human participants, dynamically advancing the simulated storyline to different stages and potentially multiple outcomes depending on user decisions.\n\nThe key research challenges we aim to address include:\n\n- How to translate human-written scripts into structured, executable behavioral guidelines for each agent;\n- How to effectively monitor the interactions and narrative flow among AI agents and human participants in real time; \n- How to design a robust validation mechanism to detect and correct hallucinated or inconsistent agent behaviors.\n\nPotential techniques include Model Context Protocol (MCP), Retrieval-Augmented Generation (RAG), advanced context management strategies, and principles from game design and interactive storytelling.",
+  "status": "Active Development",
+  "keywords": ["AI/ML agent", "Simulator", "LLM"],
+  "image": "src/assets/projects/003.jpeg",
+  "portfolio": []
+}

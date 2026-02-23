@@ -1,0 +1,71 @@
+{
+  "id": 2,
+  "title": "VR Testing Automation",
+  "overview": "Design an automated framework for Virtual Reality applications' testing, exploration, and navigation",
+  "fullDescription": "[Virtual Reality](https://en.wikipedia.org/wiki/Virtual_reality) (VR) is a technology that creates a computer-generated 3D environment where users feel as if they are inside the scene. Through immersive interaction, users can look around, move within the space, and interact naturally with virtual objects in real time. \n\nTesting in VR is mostly done manually, with testers physically exploring the virtual environment and interacting with objects to check whether the system behaves as expected. This project proposes a novel framework that supports automated testing in VR, focusing on designing ongoing, reasonable interactions and navigation actions while exploring the virtual environment.\n\nSince our goal is to develop a general solution that can be applied across different VR platforms, we leverage techniques such as computer vision and large language models (LLMs) to describe what users see in the 3D world, both visually and textually. This project is currently under active development, and we are continuing to build and refine the framework.",
+  "status": "Active Development",
+  "keywords": ["Software Testing", "VR", "Computer Vision", "LLM"],
+  "image": "src/assets/projects/002.jpeg",
+  "portfolio": [
+    {
+      "id": "p2-1",
+      "type": "paper",
+      "title": "Automatic Extraction of Code Dependency in Virtual Reality Software",
+      "authors": "Jacinto Molina, **Xue Qin**, Xiaoyin Wang",
+      "venue": "ICPC 2021",
+      "year": 2021,
+      "url": "https://ieeexplore.ieee.org/abstract/document/9463008",
+      "publishedDate": "2021-05"
+    },
+    {
+      "id": "p2-2",
+      "type": "paper",
+      "title": "DyTRec: A Dynamic Testing Recommendation tool for Unity-based Virtual Reality Software",
+      "authors": "**Xue Qin**, Foyzul Hassan",
+      "venue": "ASE 2022",
+      "year": 2022,
+      "url": "https://dl.acm.org/doi/abs/10.1145/3551349.3560510",
+      "publishedDate": "2023-01"
+    },
+    {
+      "id": "p2-3",
+      "type": "paper",
+      "title": "Virtual Reality (VR) Automated Testing in the Wild: A Case Study on Unity-Based VR Applications",
+      "authors": "Dhia Elhaq Rzig, Nafees Iqbal, Isabella Attisano, **Xue Qin**, Foyzul Hassan",
+      "venue": "ISSTA 2023",
+      "year": 2023,
+      "url": "https://dl.acm.org/doi/abs/10.1145/3597926.3598134",
+      "publishedDate": "2023-07"
+    },
+    {
+      "id": "p2-4",
+      "type": "paper",
+      "title": "Utilizing Generative AI for VR Exploration Testing: A Case Study",
+      "authors": "**Xue Qin**, Garrett Weaver",
+      "venue": "ASEW 2024",
+      "year": 2024,
+      "url": "https://dl.acm.org/doi/abs/10.1145/3691621.3694955",
+      "publishedDate": "2024-10"
+    },
+    {
+      "id": "p2-5",
+      "type": "paper",
+      "title": "Harnessing large language models for virtual reality exploration testing: a case study",
+      "authors": "Zhenyu Qi, Haotang Li, Hao Qin, Kebin Peng, Sen He, **Xue Qin**",
+      "venue": "Automated Software Engineering Journal",
+      "year": 2025,
+      "url": "https://link.springer.com/article/10.1007/s10515-025-00535-3",
+      "publishedDate": "2025-09"
+    },
+    {
+      "id": "p2-6",
+      "type": "paper",
+      "title": "NavAI: A Generalizable LLM Framework for Navigation Tasks in Virtual Reality Environments",
+      "authors": "**Xue Qin**, Matthew DiGiovanni",
+      "venue": "ASEW 2025",
+      "year": 2025,
+      "url": "https://ieeexplore.ieee.org/abstract/document/11334314",
+      "publishedDate": "2025-11"
+    }
+  ]
+}

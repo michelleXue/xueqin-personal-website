@@ -1,0 +1,41 @@
+{
+  "id": 1,
+  "title": "Automated Voice Assistant Dev",
+  "overview": "A noval approach to automatically generate the voice assistant code for application built-in functionalities.",
+  "fullDescription": 
+  "A voice assistant on a smartphone is a built-in tool that lets you control your phone by speaking instead of typing or tapping. It listens to what you say, understands your request, and then helps you do things like send messages, set reminders, search for information, or open apps. With the current LLM advancement, ==customized VA== with intellegent becomes more favorable that the general [OS-level VA](https://www.apple.com/siri/). \n\nThis project proposed a novel approach that supports **Voice Assistant (VA)** development by automatically reusing existing logic from test code. In this project, we proposes a mutation based extraction techniques to indentify the task-completion patterns from test cases for general cases. We also leverage the LLM on code summarization to generate task description of test code, and we also leverage the LLM's ability on text similarity to map the user's intent from voice command to the existing task, so that a VA request can be successfully matched to an executable task. \n\nThis project is currently under evaluation and revision, where we focusing on evaluating the user feedback of our general design and improve the robustness of the tool.",  
+  "status": "Evaluation & Validation",
+  "keywords": ["Code Generation", "Accessibility", "LLM"],
+  "image": "src/assets/projects/001.jpeg",
+  "portfolio": [
+    {
+      "id": "p1-1",
+      "type": "paper",
+      "title": "Test2VA: Reusing GUI Test Cases for Voice Assistant Features Development in Mobile Applications",
+      "authors": "Garrett Weaver, Xue Qin",
+      "venue": "ArXiv",
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2407.18155",
+      "publishedDate": "2024-07"
+    },
+    {
+      "id": "p1-2",
+      "type": "tool",
+      "name": "Test2VA",
+      "description": "Test2VA tool link, version 1.1.9 (last update: 04-10-2025)",
+      "demoLink": "https://pypi.org/project/test2va/",
+      "linkType": "pypi",
+      "publishedDate": "2025-04"
+    },
+    {
+      "id": "p1-3",
+      "type": "award",
+      "pin": true,
+      "name": "NSF Award",
+      "description": "CRII: SHF: Graphical User Interface Test Code Adaptation for Developing Voice Assistant Features in Mobile Applications",
+      "url": "https://www.nsf.gov/awardsearch/show-award?AWD_ID=2245202",
+      "publishedDate": "2023-02"
+    }
+
+  ]
+}

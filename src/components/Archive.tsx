@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Calendar, ExternalLink, ArrowLeft } from 'lucide-react';
-import { activities, activityColorStyles } from '../data/activities';
+import { activitiesNewestFirst, activityColorStyles } from '../data/activities/index';
 
 interface ArchiveProps {
   onBack: () => void;
@@ -29,7 +29,7 @@ export function Archive({ onBack }: ArchiveProps) {
           </p>
 
           <div className="space-y-4">
-            {activities.map((activity, index) => {
+            {activitiesNewestFirst.map((activity, index) => {
               const Icon = activity.icon;
               const colorStyle = activityColorStyles[activity.color];
 

@@ -1,0 +1,46 @@
+{
+  "id": 2,
+  "code": "CSC 1052",
+  "title": "Algorithms & Data Struc II",
+  "description": "Object-oriented design: inheritance, interfaces, polymorphism; problem analysis; recursion; abstract data types; dynamically linked structures; data structures: stacks, queues, lists, trees, maps, etc.",
+  "syllabusUrl": "#",
+  "active": true,
+  "syllabus": {
+    "objectives": [
+      "Establish an understanding of interfaces, inheritance, and polymorphism.",
+      "Establish an understanding of recursion and recursive programming.",
+      "Establish an understanding of the following data structures, including the specification, implementation, and use of each: lists, stacks, queues, collections, sets, maps, and trees.",
+      "Establish an understanding of basic algorithm analysis issues, including time/space tradeoffs and algorithm growth rates."
+    ],
+    "textbook": {
+      "title": "Data Structures and Algorithm Analysis in Java (3rd Edition)",
+      "url": "https://www.pearson.com/en-us/subject-catalog/p/data-structures-and-algorithm-analysis-in-java/P200000003600",
+      "description": "Reference text for algorithm analysis, abstract data types, and efficient Java implementations."
+    },
+    "gradingBreakdown": [
+      { "item": "Project", "weight": "20%" },
+      { "item": "Labs", "weight": "25%" },
+      { "item": "Midterm", "weight": "10%" },
+      { "item": "Final Exam", "weight": "25%" },
+      { "item": "Homework", "weight": "10%" },
+      { "item": "Participation", "weight": "10%" }
+    ],
+    "classSchedule": [
+      { "week": 1, "topic": "Welcome, Review of Basic Algorithm and Objects & Class" },
+      { "week": 2, "topic": "Program Organization, Inheritance, Polymorphism" },
+      { "week": 3, "topic": "Exception and Handling" },
+      { "week": 4, "topic": "Algorithm Efficiency" },
+      { "week": 5, "topic": "List and Implementation using Array, Collection" },
+      { "week": 6, "topic": "List and Implementation using Linked List, Midterm Review" },
+      { "week": 7, "topic": "Midterm, Midterm Return" },
+      { "week": 9, "topic": "Stack (application, and implementation)" },
+      { "week": 10, "topic": "Recursion" },
+      { "week": 11, "topic": "Searching and Sorting Algorithm" },
+      { "week": 12, "topic": "Queue (application, and implementation)" },
+      { "week": 13, "topic": "Map and Hash Table, Set" },
+      { "week": 14, "topic": "General Tree and Binary Search Tree" },
+      { "week": 15, "topic": "Heap" },
+      { "week": 16, "topic": "Final Exam Review" }
+    ]
+  }
+}
